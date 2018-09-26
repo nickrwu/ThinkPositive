@@ -21,8 +21,8 @@ class MenuViewController: UIViewController {
         
         //self.startButton.setImage(MyStyleKit.imageOfStartButton, for: .normal)
         self.navigationController?.navigationBar.titleTextAttributes =
-            [NSAttributedStringKey.foregroundColor: UIColor.white,
-             NSAttributedStringKey.font: UIFont(name: "Nunito-Regular", size: 19)!]
+            [NSAttributedString.Key.foregroundColor: UIColor.white,
+             NSAttributedString.Key.font: UIFont(name: "Nunito-Regular", size: 19)!]
     }
     
     @IBAction func startPressed(_ sender: Any) {

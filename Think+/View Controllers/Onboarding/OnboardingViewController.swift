@@ -30,7 +30,7 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource, Pap
         
         
         // add constraints
-        for attribute: NSLayoutAttribute in [.left, .right, .top, .bottom] {
+        for attribute: NSLayoutConstraint.Attribute in [.left, .right, .top, .bottom] {
             let constraint = NSLayoutConstraint(item: onboardingView,
                                                 attribute: attribute,
                                                 relatedBy: .equal,

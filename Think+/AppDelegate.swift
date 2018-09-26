@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIGestureRecognizerDelega
 
     var window: UIWindow?
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         
         incrementAppRuns()
@@ -41,11 +41,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIGestureRecognizerDelega
         // Override point for customization after application launch.
         UINavigationBar.appearance().barTintColor = UIColor(red: 72/255, green: 136/255, blue: 216/255, alpha: 1)
         UINavigationBar.appearance().tintColor = UIColor.white
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white,
-                                                            NSAttributedStringKey.font: UIFont(name: "Nunito-Regular", size: 25)!]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white,
+                                                            NSAttributedString.Key.font: UIFont(name: "Nunito-Regular", size: 25)!]
         UINavigationBar.appearance().isTranslucent = false
         
-        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "Nunito-Regular", size: 19)!], for: .normal)
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Nunito-Regular", size: 19)!], for: .normal)
 
         
         return true

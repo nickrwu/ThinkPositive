@@ -81,7 +81,7 @@ class FunctionsViewController: UIViewController {
         super.viewDidLoad()
 
         //App Enters Background
-        NotificationCenter.default.addObserver(self, selector: #selector(willResignActive), name: .UIApplicationWillResignActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(willResignActive), name: UIApplication.willResignActiveNotification, object: nil)
         
         //Orientation lock
         AppUtility.lockOrientation(.landscape)

@@ -34,8 +34,8 @@ class LogViewController: UITableViewController{
         // Do any additional setup after loading the view, typically from a nib.
         
         self.navigationController?.navigationBar.titleTextAttributes =
-            [NSAttributedStringKey.foregroundColor: UIColor.white,
-             NSAttributedStringKey.font: UIFont(name: "Nunito-Regular", size: 19)!]
+            [NSAttributedString.Key.foregroundColor: UIColor.white,
+             NSAttributedString.Key.font: UIFont(name: "Nunito-Regular", size: 19)!]
         
         self.navigationItem.rightBarButtonItem = editButtonItem
         
@@ -79,7 +79,7 @@ class LogViewController: UITableViewController{
         return true
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
             _ = SessionsDatabase.instance.deleteSession(cid: sessions[indexPath.row].id!)
