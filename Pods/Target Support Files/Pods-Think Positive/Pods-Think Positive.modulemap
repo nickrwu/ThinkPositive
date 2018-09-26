@@ -1,0 +1,6 @@
+framework module Pods_Think_Positive {
+  umbrella header "Pods-Think Positive-umbrella.h"
+
+  export *
+  module * { export * }
+}
