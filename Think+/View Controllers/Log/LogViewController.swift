@@ -68,7 +68,7 @@ class LogViewController: UITableViewController{
         label?.text = "Time: \(sessions[indexPath.row].sessionTime)"
 
         label = cell.viewWithTag(14) as? UILabel // Duration label
-        label?.text = "Duration: \(String(format: "%.1f", sessions[indexPath.row].duration)) Seconds"
+        label?.text = "Duration: \(String(format: "%1u", sessions[indexPath.row].duration / 60)) Minutes \(String(format: "%1u", sessions[indexPath.row].duration % 60)) Seconds"
         
         return cell
     }

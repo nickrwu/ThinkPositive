@@ -15,7 +15,7 @@ class SessionsDatabase {
     private let id = Expression<Int64>("id")
     private let sessionDate = Expression<String>("sessionDate")
     private let sessionTime = Expression<String>("sessionTime")
-    private let duration = Expression<Double>("duration")
+    private let duration = Expression<Int>("duration")
 
 
     static let instance = SessionsDatabase()
@@ -51,7 +51,7 @@ class SessionsDatabase {
         }
     }
     
-    func addSession1(currentDate: String, currentTime: String, time: Double) -> Int64? {
+    func addSession1(currentDate: String, currentTime: String, time: Int) -> Int64? {
         do {
             let insert = sessions.insert(self.sessionDate <- currentDate, self.sessionTime <- currentTime, self.duration <- time)
             let id = try sessionsDatabase!.run(insert)

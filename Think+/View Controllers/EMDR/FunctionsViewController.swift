@@ -17,6 +17,14 @@ class FunctionsViewController: UIViewController {
     //Mark: Transitioning
    // let slideAnimator = SlideAnimator()
     
+    //Mark: Creating instance of timer class
+    var stopWatchTimer = Timer()
+    var time = 0
+
+    var isPlaying = false
+    var pausePressed = false
+    var screenTapped = false
+    
     //Mark: SpriteKit View
     @IBOutlet weak var sceneView: SKView!
     var scene: DotScene?
@@ -26,15 +34,9 @@ class FunctionsViewController: UIViewController {
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var unpauseButton: UIButton!
-    @IBOutlet weak var lbl: UILabel!
-    
-    //Mark: Timers
-    var time = 0.0
-    var timer = Timer()
-    var isPlaying = false
-    
-    var pausePressed = false
-    var screenTapped = false
+    @IBOutlet weak var minLabel: UILabel!
+    @IBOutlet weak var secLabel: UILabel!
+    @IBOutlet weak var colonLabel: UILabel!
     
     //App Enters Background
     @objc func willResignActive(_ notification: Notification) {
@@ -46,17 +48,19 @@ class FunctionsViewController: UIViewController {
             self.unpauseButton.alpha = 1
             self.pauseButton.alpha = 0
             self.stopButton.alpha = 1
-            self.lbl.alpha = 1
+            self.secLabel.alpha = 1
+            self.minLabel.alpha = 1
+            self.colonLabel.alpha = 1
         })
         
-        timer.invalidate()
+        stopWatchTimer.invalidate()
         isPlaying = false
     }
     
     //Mark: Date and Time
     let currentDate = DateFormatter.localizedString(from: NSDate() as Date, dateStyle:DateFormatter.Style.medium, timeStyle: DateFormatter.Style.none)
     
-    let currentTime = DateFormatter.localizedString(from: NSDate() as Date, dateStyle:DateFormatter.Style.none, timeStyle: DateFormatter.Style.short)
+    var currentTime = DateFormatter.localizedString(from: NSDate() as Date, dateStyle:DateFormatter.Style.none, timeStyle: DateFormatter.Style.short)
 
 
     override var prefersStatusBarHidden: Bool {
@@ -65,15 +69,16 @@ class FunctionsViewController: UIViewController {
     }
     
     @IBAction func resetTimer(_ sender: AnyObject) {
-        timer.invalidate()
+        stopWatchTimer.invalidate()
         isPlaying = false
-        time = 0.0
-        lbl.text = String(time)
+        time = 0
+        secLabel.text = String(time)
     }
     
     @objc func UpdateTimer() {
-        time = time + 0.1
-        lbl.text = String(format: "%.1f", time)
+        time += 1
+        minLabel.text = "\(time / 60)"
+        secLabel.text = "\(time % 60)"
     }
     
     
@@ -98,13 +103,13 @@ class FunctionsViewController: UIViewController {
         scene.scaleMode = .resizeFill
         skView.presentScene(scene)*/
         
-        lbl.text = String(time)
+        stopWatchTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(UpdateTimer), userInfo: nil, repeats: true)
         
         if(isPlaying) {
             return
         }
         
-        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(UpdateTimer), userInfo: nil, repeats: true)
+        //timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(UpdateTimer), userInfo: nil, repeats: true)
         isPlaying = true
         
         
@@ -122,6 +127,7 @@ class FunctionsViewController: UIViewController {
         
         AppUtility.lockOrientation(.landscape, andRotateTo: .landscapeRight)
     }
+    
     @IBAction func tapPressed(_ sender: Any) {
         if screenTapped == false{
             screenTapped = true
@@ -130,7 +136,9 @@ class FunctionsViewController: UIViewController {
                 self.unpauseButton.alpha = 0
                 self.pauseButton.alpha = 0
                 self.stopButton.alpha = 0
-                self.lbl.alpha = 0
+                self.secLabel.alpha = 0
+                self.minLabel.alpha = 0
+                self.colonLabel.alpha = 0
             })
         }
           else if screenTapped == true {
@@ -141,7 +149,9 @@ class FunctionsViewController: UIViewController {
                     self.unpauseButton.alpha = 1
                     self.pauseButton.alpha = 0
                     self.stopButton.alpha = 1
-                    self.lbl.alpha = 1
+                    self.secLabel.alpha = 1
+                    self.minLabel.alpha = 1
+                    self.colonLabel.alpha = 1
                 })
             }
             
@@ -150,7 +160,9 @@ class FunctionsViewController: UIViewController {
                     self.unpauseButton.alpha = 0
                     self.pauseButton.alpha = 1
                     self.stopButton.alpha = 1
-                    self.lbl.alpha = 1
+                    self.secLabel.alpha = 1
+                    self.minLabel.alpha = 1
+                    self.colonLabel.alpha = 1
                 })
             }
         }
@@ -159,7 +171,7 @@ class FunctionsViewController: UIViewController {
     @IBAction func pausePressed(_ sender: Any) {
         pausePressed = true
         
-        timer.invalidate()
+        stopWatchTimer.invalidate()
         isPlaying = false
         
         if let scene = self.scene {
@@ -170,6 +182,7 @@ class FunctionsViewController: UIViewController {
             self.unpauseButton.alpha = 1
         })
     }
+    
     @IBAction func unpausePressed(_ sender: Any) {
         pausePressed = false
         if let scene = self.scene {
@@ -183,13 +196,13 @@ class FunctionsViewController: UIViewController {
             return
         }
         
-        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(UpdateTimer), userInfo: nil, repeats: true)
+        stopWatchTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(UpdateTimer), userInfo: nil, repeats: true)
         isPlaying = true
     }
     
     @IBAction func stopPressed(_ sender: Any) {
 
-        timer.invalidate()
+        stopWatchTimer.invalidate()
         isPlaying = false
         //showReview()
         if let scene = self.scene {
