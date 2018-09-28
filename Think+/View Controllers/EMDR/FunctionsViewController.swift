@@ -68,13 +68,6 @@ class FunctionsViewController: UIViewController {
         //hide status bar
     }
     
-    @IBAction func resetTimer(_ sender: AnyObject) {
-        stopWatchTimer.invalidate()
-        isPlaying = false
-        time = 0
-        secLabel.text = String(time)
-    }
-    
     @objc func UpdateTimer() {
         time += 1
         minLabel.text = "\(time / 60)"
@@ -95,13 +88,7 @@ class FunctionsViewController: UIViewController {
         self.scene?.scaleMode = .aspectFill
                 
         self.sceneView.presentScene(self.scene)
-        
-        //setting up Sprite Kit Scene
-        /*let scene = DotScene(size: CGSize(width: 1536, height: 2048))
-        let skView = self.view as! SKView
-        scene.size = skView.bounds.size
-        scene.scaleMode = .resizeFill
-        skView.presentScene(scene)*/
+
         
         stopWatchTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(UpdateTimer), userInfo: nil, repeats: true)
         
@@ -109,17 +96,7 @@ class FunctionsViewController: UIViewController {
             return
         }
         
-        //timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(UpdateTimer), userInfo: nil, repeats: true)
         isPlaying = true
-        
-        
-        /*//Gesture Recognition
-        let recognizer: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: Selector(("showMenu")))
-        recognizer.direction = .up
-        self.view.addGestureRecognizer(recognizer)
-        
-        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-         */
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -213,45 +190,16 @@ class FunctionsViewController: UIViewController {
             let session = Session(id: id, sessionDate: currentDate, sessionTime: currentTime, duration: time)
             sessions.append(session)
             
-           // self.presentingViewController?.dismiss(animated: true){
-                //self.navigationController?.popViewController(animated: false)
-            //}
-            
-            /*let navigationController = self.presentingViewController as? UINavigationController
-             
-             self.presentingViewController?.presentingViewController?.dismiss(animated: true)
-             {
-             
-             let _ = navigationController?.popViewController(animated: true)
-             }
-             */
         }
         
         performSegue(withIdentifier: "UnwindToMenuSegueID", sender: self)
     }
     
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    /* MARK : Custom Slide
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination
-        
-        destination.transitioningDelegate = slideAnimator
-        if let scene = self.scene {
-            scene.stopDot()
-        }
-    }
     
-    func swipeUp(recognizer : UISwipeGestureRecognizer)
-    {
-        self.performSegue(withIdentifier: "stop", sender: self)
-        showReview()
-    }
-    */
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         

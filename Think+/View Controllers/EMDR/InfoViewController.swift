@@ -10,7 +10,6 @@ import UIKit
 
 class InfoViewController: UIViewController {
 
-    //@IBOutlet weak var dismissButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

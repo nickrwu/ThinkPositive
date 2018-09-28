@@ -11,16 +11,6 @@ import SQLite
 
 class LogViewController: UITableViewController{
     //Mark: Sqlite
-    /*
-    var sessionsDatabase: Connection!
-    
-    let sessionsTable = Table("sessions")
-    let id = Expression<Int>("id")
-    let sessionDate = Expression<String>("sessionDate")
-    let sessionTime = Expression<String>("sessionTime")
-    let duration = Expression<Double>("duration")
-    let note = Expression<String>("note")
-    */
     private var sessions = [Session]()
     private var selectedSession: Int?
     
@@ -85,10 +75,7 @@ class LogViewController: UITableViewController{
             _ = SessionsDatabase.instance.deleteSession(cid: sessions[indexPath.row].id!)
             sessions.remove(at: indexPath.row)
             sessionsTableView.deleteRows(at: [IndexPath(row: indexPath.row, section: 0) as IndexPath], with: .fade)
-            //tableView.deleteRows(at: [indexPath], with: .fade)
-            
-            
-            //sessionsTableView.reloadData()
+
             sessions = SessionsDatabase.instance.getSession()
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -113,10 +100,7 @@ class LogViewController: UITableViewController{
         
         sessionsTableView.reloadData()
         sessions = SessionsDatabase.instance.getSession()
-
         
-        //AppUtility.lockOrientation(.portrait)
-        // Or to rotate and lock
         AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
     }
     

@@ -19,7 +19,6 @@ class MenuViewController: UIViewController {
         
         AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
         
-        //self.startButton.setImage(MyStyleKit.imageOfStartButton, for: .normal)
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSAttributedString.Key.foregroundColor: UIColor.white,
              NSAttributedString.Key.font: UIFont(name: "Nunito-Regular", size: 19)!]
