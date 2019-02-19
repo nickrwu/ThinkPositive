@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3260FA87F816B09A8C32D6C0 /* Pods_Think_Positive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23081C8671ACCE1D580B3023 /* Pods_Think_Positive.framework */; };
-		5105A73C2069768F00F68A8C /* CognitiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5105A73B2069768F00F68A8C /* CognitiveViewController.swift */; };
 		511B250020472D430051EC09 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511B24FF20472D430051EC09 /* OnboardingView.swift */; };
 		511B25082048B1F40051EC09 /* paper_onboarding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 511B25092048B1F40051EC09 /* paper_onboarding.framework */; };
 		511B250A2048B1F90051EC09 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 511B250B2048B1F90051EC09 /* SQLite.framework */; };
@@ -29,6 +28,7 @@
 		519607221FFA8680007B6AC7 /* DotScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519607211FFA8680007B6AC7 /* DotScene.swift */; };
 		51AC47F91FFD2B82002C21E0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AC47F81FFD2B82002C21E0 /* SettingsViewController.swift */; };
 		51E391CE2131B68400073E94 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E391CD2131B68400073E94 /* InfoViewController.swift */; };
+		51E4A6FF221BAB47000C13D9 /* CognitiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5105A73B2069768F00F68A8C /* CognitiveViewController.swift */; };
 		51EE034C204691E8009E8E34 /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51EE0341204691E7009E8E34 /* Nunito-Light.ttf */; };
 		51EE034D204691E8009E8E34 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51EE0342204691E7009E8E34 /* Nunito-Regular.ttf */; };
 		51EE034E204691E8009E8E34 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51EE0343204691E7009E8E34 /* Nunito-Bold.ttf */; };
@@ -524,7 +524,7 @@
 				51EE03622047038F009E8E34 /* OnboardingViewController.swift in Sources */,
 				516B0A2E1FF93DDD004E5770 /* MenuViewController.swift in Sources */,
 				511B250020472D430051EC09 /* OnboardingView.swift in Sources */,
-				5105A73C2069768F00F68A8C /* CognitiveViewController.swift in Sources */,
+				51E4A6FF221BAB47000C13D9 /* CognitiveViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
