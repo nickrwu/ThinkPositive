@@ -31,6 +31,9 @@ class CognitiveViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.center = CGPoint(x: view.bounds.size.width  / 2,
+                                 y: view.bounds.size.height / 2)
+        
         // Do not forget to enable user interaction on our imageView
         imageView.isUserInteractionEnabled = true
         
@@ -78,30 +81,8 @@ class CognitiveViewController: UIViewController {
         // Resize the content
         imageView.contentMode = .scaleAspectFill
         imageView.layer.masksToBounds = true
-        
-        // That was for testing porpouse only
-        // imageView.backgroundColor = .red
-        // Constraints
-       // setupImageViewConstraints()
     }
     
-    /// Setup ImageView constraints
-  /*private func setupImageViewConstraints() {
-        
-        // Disable Autoresizing Masks into Constraints
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        
-        // Constraints
-        NSLayoutConstraint.activate([
-            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            imageView.heightAnchor.constraint(equalToConstant: 250)
-            ])
-        
-        view.layoutIfNeeded()
-    }*/
-
     @objc func infoButtonTapped(sender: UIBarButtonItem) {
         performSegue(withIdentifier: "infoSegue", sender: sender)
     }
@@ -200,8 +181,9 @@ extension CognitiveViewController: UIGestureRecognizerDelegate {
             // If the gesture has cancelled/terminated/failed or everything else that's not performing
             // Smoothly restore the transform to the "original"
             UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseInOut, animations: {
-                gesture.view!.center = self.view.center
-                gesture.setTranslation(.zero, in: self.imageView)
+                gesture.view!.center = CGPoint(x: self.view.bounds.size.width  / 2,
+                                               y: self.view.bounds.size.height / 2 - 50)
+                gesture.setTranslation(.zero, in: self.view)
             }) { _ in
                 // Hide the overaly
                 UIView.animate(withDuration: 0.2) {

@@ -201,12 +201,12 @@ http://www.emdr.com/what-is-emdr/</string>
         <scene sceneID="HCr-xw-GeH">
             <objects>
                 <viewController title="Cognitive Thoughts" id="vbq-Y7-Qlz" customClass="CognitiveViewController" customModule="Think_Positive" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5sN-nF-yX6">
+                    <view key="view" contentMode="scaleAspectFill" id="5sN-nF-yX6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cognitions Sheet 1xedit" translatesAutoresizingMaskIntoConstraints="NO" id="R0a-n0-3R4">
-                                <rect key="frame" x="0.0" y="173" width="414" height="404"/>
+                                <rect key="frame" x="0.0" y="116" width="414" height="404"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="R0a-n0-3R4" secondAttribute="height" multiplier="207:202" id="lTg-3y-nlO"/>
@@ -239,7 +239,7 @@ http://www.emdr.com/what-is-emdr/</string>
                             <constraint firstItem="J1I-EH-IAb" firstAttribute="centerX" secondItem="c7p-G1-JLN" secondAttribute="centerX" id="273-WH-EZA"/>
                             <constraint firstItem="AYL-YV-8Ss" firstAttribute="leading" secondItem="c7p-G1-JLN" secondAttribute="leading" constant="20" id="2dX-SU-L1x"/>
                             <constraint firstItem="R0a-n0-3R4" firstAttribute="trailing" secondItem="c7p-G1-JLN" secondAttribute="trailing" id="5Yc-Wl-mFG"/>
-                            <constraint firstItem="R0a-n0-3R4" firstAttribute="centerY" secondItem="c7p-G1-JLN" secondAttribute="centerY" constant="-25" id="cvZ-Pt-M2O"/>
+                            <constraint firstItem="R0a-n0-3R4" firstAttribute="centerY" secondItem="5sN-nF-yX6" secondAttribute="centerY" constant="-50" id="cvZ-Pt-M2O"/>
                             <constraint firstItem="c7p-G1-JLN" firstAttribute="trailing" secondItem="AYL-YV-8Ss" secondAttribute="trailing" constant="20" id="hn4-FK-svL"/>
                             <constraint firstItem="AYL-YV-8Ss" firstAttribute="top" secondItem="c7p-G1-JLN" secondAttribute="top" constant="24" id="wcj-6P-eUH"/>
                             <constraint firstItem="c7p-G1-JLN" firstAttribute="bottom" secondItem="J1I-EH-IAb" secondAttribute="bottom" constant="20" id="wlA-FA-7c6"/>
