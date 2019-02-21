@@ -321,23 +321,52 @@ http://www.emdr.com/what-is-emdr/</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkc-6x-RcQ">
-                                        <rect key="frame" x="8" y="11" width="57" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Settings"/>
-                                    </button>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="aOe-76-RE5">
+                                        <rect key="frame" x="12.666666666666664" y="45" width="95" height="29"/>
+                                        <segments>
+                                            <segment title="1"/>
+                                            <segment title="2"/>
+                                            <segment title="3"/>
+                                            <segment title="4"/>
+                                        </segments>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </segmentedControl>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="L5b-U5-0tX">
+                                        <rect key="frame" x="12.666666666666664" y="8" width="94" height="29"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </stepper>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed: 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5S-CT-rjJ">
+                                        <rect key="frame" x="116.66666666666666" y="11.33333333333333" width="70.666666666666657" height="22.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sounds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZZ-gs-AbM">
+                                        <rect key="frame" x="117.66666666666667" y="47.666666666666671" width="59.666666666666671" height="22.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
+                                    <constraint firstItem="b5S-CT-rjJ" firstAttribute="centerY" secondItem="L5b-U5-0tX" secondAttribute="centerY" id="7ll-gm-rwk"/>
                                     <constraint firstAttribute="trailing" secondItem="GK0-pH-7Ip" secondAttribute="trailing" constant="12.5" id="7sv-bR-GNj"/>
                                     <constraint firstItem="OIS-Zu-ZhW" firstAttribute="top" secondItem="xko-LJ-9Vk" secondAttribute="top" constant="10" id="7xu-f2-8hn"/>
+                                    <constraint firstItem="L5b-U5-0tX" firstAttribute="leading" secondItem="xko-LJ-9Vk" secondAttribute="leading" constant="12.5" id="A28-Gv-nEW"/>
                                     <constraint firstItem="Qb4-3N-o7D" firstAttribute="centerX" secondItem="xko-LJ-9Vk" secondAttribute="centerX" id="IaI-ex-L0v"/>
                                     <constraint firstItem="0LO-vd-nO8" firstAttribute="top" secondItem="xko-LJ-9Vk" secondAttribute="top" constant="10" id="NSd-z6-c1N"/>
+                                    <constraint firstItem="L5b-U5-0tX" firstAttribute="top" secondItem="xko-LJ-9Vk" secondAttribute="top" constant="8" id="OzL-o5-RGh"/>
                                     <constraint firstItem="OIS-Zu-ZhW" firstAttribute="centerX" secondItem="xko-LJ-9Vk" secondAttribute="centerX" constant="22.5" id="PsX-7H-d7J"/>
+                                    <constraint firstItem="mZZ-gs-AbM" firstAttribute="centerY" secondItem="aOe-76-RE5" secondAttribute="centerY" id="QjO-er-7Bf"/>
                                     <constraint firstAttribute="trailing" secondItem="Kd0-PP-INP" secondAttribute="trailing" constant="23" id="TW4-IO-cZO"/>
                                     <constraint firstItem="a6q-WH-r4O" firstAttribute="centerX" secondItem="xko-LJ-9Vk" secondAttribute="centerX" id="a5R-8I-dY1"/>
+                                    <constraint firstItem="mZZ-gs-AbM" firstAttribute="leading" secondItem="aOe-76-RE5" secondAttribute="trailing" constant="10" id="bHb-d0-CUp"/>
+                                    <constraint firstItem="aOe-76-RE5" firstAttribute="leading" secondItem="xko-LJ-9Vk" secondAttribute="leading" constant="12.5" id="c8l-IJ-C3B"/>
                                     <constraint firstAttribute="bottom" secondItem="Qb4-3N-o7D" secondAttribute="bottom" constant="48" id="cyW-Kd-enr"/>
+                                    <constraint firstItem="aOe-76-RE5" firstAttribute="top" secondItem="L5b-U5-0tX" secondAttribute="bottom" constant="8" id="dG4-7D-hfM"/>
+                                    <constraint firstItem="b5S-CT-rjJ" firstAttribute="leading" secondItem="L5b-U5-0tX" secondAttribute="trailing" constant="10" id="gEk-nS-tqb"/>
                                     <constraint firstItem="a6q-WH-r4O" firstAttribute="top" secondItem="xko-LJ-9Vk" secondAttribute="top" constant="8" id="hH3-1R-gMK"/>
                                     <constraint firstItem="0LO-vd-nO8" firstAttribute="centerX" secondItem="xko-LJ-9Vk" secondAttribute="centerX" constant="-22.5" id="hbS-t4-5Uj"/>
                                     <constraint firstAttribute="top" secondItem="Kd0-PP-INP" secondAttribute="top" constant="-8" id="m3Z-J5-KpE"/>
@@ -552,7 +581,7 @@ http://www.emdr.com/what-is-emdr/</string>
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="LogViewController" customModule="Think_Positive" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" id="TnR-DN-v0l">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" id="TnR-DN-v0l">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
