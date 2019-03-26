@@ -3,15 +3,24 @@ PODS:
   - SQLite.swift (0.11.5):
     - SQLite.swift/standard (= 0.11.5)
   - SQLite.swift/standard (0.11.5)
+  - SwiftySound (1.0.0)
 
 DEPENDENCIES:
   - paper-onboarding
   - SQLite.swift (~> 0.11.5)
+  - SwiftySound
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - paper-onboarding
+    - SQLite.swift
+    - SwiftySound
 
 SPEC CHECKSUMS:
   paper-onboarding: e6e2778c4e8de8db1d798bb7e3b4922e91fb7f99
   SQLite.swift: 6e5356850bb1791459f8c16d6ee9195b28714a2e
+  SwiftySound: b9c3370956fd4ed65ed79d45563070077a50a2cd
 
-PODFILE CHECKSUM: cef3f23e76cca47f664ad40b2effb5efc4f9c9e3
+PODFILE CHECKSUM: 8af92af5e005d02d19b57a6b56a3f250c12eca84
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.6.1

@@ -116,6 +116,14 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource, Pap
                     self.getStartedButton.alpha = 0
                 })
             }
+        }else if index == 2
+        {
+            if (self.getStartedButton.alpha == 1)
+            {
+                UIView.animate(withDuration: 0.2, animations: {
+                    self.getStartedButton.alpha = 0
+                })
+            }
         }
     }
     
